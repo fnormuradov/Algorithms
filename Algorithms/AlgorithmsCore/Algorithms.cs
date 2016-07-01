@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithms
+namespace AlgorithmsCore
 {
-    class Program
+    public static partial class Algorithms
     {
-        static void Main(string[] args)
-        {
-        }
+
     }
 }
