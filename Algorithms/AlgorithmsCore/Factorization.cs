@@ -41,6 +41,19 @@ namespace AlgorithmsCore
             return new Tuple<bool, List<PrimeNumber>>(isPrime, factors);
         }
 
+        public static bool IsPrimeJakhongir(int n)
+        {
+            if (n <= 1)
+                return false;
+            if (n % 2 == 0 && n > 2)
+                return false;
+            for (var i = 3; i < Math.Sqrt(n) + 1; i += 2)
+                if (n % i == 0)
+                {
+                    return false;
+                }
+            return true;
+        }
         public static void PollardRho(BigInteger n)
         {
             var i = 1;

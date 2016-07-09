@@ -105,6 +105,13 @@ namespace AlgorithmTests
             }
             return result.ToString();
         }
+
+        [TestMethod]
+        public void IsPrimeJakhongirTest()
+        {
+            Assert.IsFalse(Algorithms.IsPrimeJakhongir(15));
+            Assert.IsFalse(Algorithms.IsPrimeJakhongir(225));
+        }
     }
 
     public class PrimeNumberEqualityComparer : IComparer
