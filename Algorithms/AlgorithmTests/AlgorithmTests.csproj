@@ -54,6 +54,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="EuclidianAlgorithmTests.cs" />
+    <Compile Include="FactorizationTests.cs" />
     <Compile Include="PowerTests.cs" />
     <Compile Include="PrimeGeneratorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
