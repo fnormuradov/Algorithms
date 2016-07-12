@@ -40,6 +40,8 @@ namespace AlgorithmsCore
         public static bool IsPrime(BigInteger p, int length)
         {
             var a = GenerateRandomWithString(length / 2);
+            if (a < 2)
+                a = 2;
             return BigInteger.ModPow(a, (p - 1), p) == 1;
         }
 

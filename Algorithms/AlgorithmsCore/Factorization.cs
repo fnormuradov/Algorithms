@@ -83,6 +83,17 @@ namespace AlgorithmsCore
             }
         }
 
+        public static int GetNumberOfFactors(List<PrimeNumber> primeFactors)
+        {
+            var numberOfFactors = 1;
+            if (primeFactors.Count == 1)
+                return 1;
+            for (var i = 1; i < primeFactors.Count; i++)
+            {
+                numberOfFactors *= (primeFactors[i].GetPower() + 1);
+            }
+            return numberOfFactors;
+        }
     }
 
     public class PrimeNumber

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -13,10 +14,27 @@ namespace Console
     {
         static void Main(string[] args)
         {
-            //System.Console.SetOut(new StreamWriter("C:/Users/Farrukh/Output.txt"));
-            //var result = Algorithms.GetPrimeNumbers(100000);
-            System.Console.WriteLine(BigInteger.Max(10000000000000000,10000000000000000));
-            System.Console.ReadKey();
+            var triangleNumbers = Algorithms.GenerateTriangleNumbers(100000);
+            for (var i = 3000; i < 1000000; i++)
+            {
+                var triangleNumber = triangleNumbers[i];
+                System.Console.WriteLine(triangleNumber);
+                if (triangleNumber.IsEven)
+                {
+                    var primeFactors = Algorithms.FactorizeBruteForce(triangleNumber);
+
+                    var numberOfFactors = Algorithms.GetNumberOfFactors(primeFactors.Item2);
+                    System.Console.WriteLine(triangleNumber + " | " + numberOfFactors);
+                    System.Console.ReadKey();
+                    if (numberOfFactors > 500)
+                    {
+                        System.Console.WriteLine(triangleNumber + " | " + numberOfFactors);
+                        System.Console.ReadKey();
+                        break;
+                    }
+                }
+            }
         }
+
     }
 }
