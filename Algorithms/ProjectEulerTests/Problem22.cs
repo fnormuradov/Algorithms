@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security.Principal;
 using System.Text;
@@ -14,7 +15,7 @@ namespace ProjectEulerTests
     [TestClass]
     public class Problem22
     {
-        private static string RawText = File.ReadAllText(@"C:\Users\Farrukh\Algorithms\Algorithms\ProjectEulerTests\Data\p022_names.txt");
+        private static string RawText = File.ReadAllText(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\Data\p022_names.txt");
         private List<string> Names = RawText.Split(',').Select(x => x.Trim('"')).ToList();
         private static string Alphabet = "abcdefghijklmnopqrstuvwxyz".ToUpper();
         [TestInitialize]
