@@ -12,13 +12,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ProjectEulerTests
 {
-    [TestClass]
+    [TestClass, Ignore]
     public class Problem22
     {
         private static string RawText = File.ReadAllText(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\Data\p022_names.txt");
         private List<string> Names = RawText.Split(',').Select(x => x.Trim('"')).ToList();
         private static string Alphabet = "abcdefghijklmnopqrstuvwxyz".ToUpper();
-        [TestInitialize] 
+        [TestInitialize]
         public void SetUp()
         {
             Names.Sort();
