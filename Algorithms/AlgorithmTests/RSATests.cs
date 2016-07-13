@@ -25,7 +25,6 @@ namespace AlgorithmTests
                 Console.WriteLine("Decrypted Message: " + decryptedMessage);
                 Assert.AreEqual(m, decryptedMessage);
             }
-
         }
         public void RSATest_Two(BigInteger m)
         {

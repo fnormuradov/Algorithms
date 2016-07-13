@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmTests", "Algorithm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectEulerTests", "ProjectEulerTests\ProjectEulerTests.csproj", "{563D8CE2-EA14-4518-97B3-9A9FC589ACF1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{FA947091-21BD-4412-BCC4-679769877294}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Tests", "Web.Tests\Web.Tests.csproj", "{BD526628-CC4D-46E6-96BD-864808AF8244}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{563D8CE2-EA14-4518-97B3-9A9FC589ACF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{563D8CE2-EA14-4518-97B3-9A9FC589ACF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{563D8CE2-EA14-4518-97B3-9A9FC589ACF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA947091-21BD-4412-BCC4-679769877294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA947091-21BD-4412-BCC4-679769877294}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA947091-21BD-4412-BCC4-679769877294}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA947091-21BD-4412-BCC4-679769877294}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD526628-CC4D-46E6-96BD-864808AF8244}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD526628-CC4D-46E6-96BD-864808AF8244}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD526628-CC4D-46E6-96BD-864808AF8244}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD526628-CC4D-46E6-96BD-864808AF8244}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
