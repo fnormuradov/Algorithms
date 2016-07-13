@@ -45,10 +45,17 @@
     <Compile Include="EuclidianAlgorithm.cs" />
     <Compile Include="ExponentiatingBySquaring.cs" />
     <Compile Include="Factorization.cs" />
+    <Compile Include="NumberHelpers.cs" />
     <Compile Include="PrimeNumberGenator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RSA.cs" />
     <Compile Include="StringHelpers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{9fb4d4a7-d33a-40cc-94fe-916e305cf242}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

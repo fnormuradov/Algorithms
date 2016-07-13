@@ -54,6 +54,13 @@
     <Compile Include="Problem10.cs" />
     <Compile Include="Problem11.cs" />
     <Compile Include="Problem12.cs" />
+    <Compile Include="Problem13.cs" />
+    <Compile Include="Problem14.cs" />
+    <Compile Include="Problem16.cs" />
+    <Compile Include="Problem17.cs" />
+    <Compile Include="Problem20.cs" />
+    <Compile Include="Problem21.cs" />
+    <Compile Include="Problem22.cs" />
     <Compile Include="Problem4.cs" />
     <Compile Include="Problem9.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -63,6 +70,13 @@
       <Project>{35DAA66F-14FE-4B29-A829-4D8D15F212F3}</Project>
       <Name>AlgorithmsCore</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{9FB4D4A7-D33A-40CC-94FE-916E305CF242}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\p022_names.txt" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
