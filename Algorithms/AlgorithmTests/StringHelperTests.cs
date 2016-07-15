@@ -106,5 +106,44 @@ namespace AlgorithmTests
             var resultSpelling = StringHelpers.SpellNumber(n);
             Assert.AreEqual(spelling, resultSpelling);
         }
+
+        [TestMethod]
+        public void EncryptTest()
+        {
+            Assert.AreEqual("10", StringHelpers.EncryptToNumbers("a"));
+            Assert.AreEqual("11", StringHelpers.EncryptToNumbers("b"));
+            Assert.AreEqual("56", StringHelpers.EncryptToNumbers(" "));
+            Assert.AreEqual("1011", StringHelpers.EncryptToNumbers("ab"));
+            Assert.AreEqual("321710295618285634243027562310221448", StringHelpers.EncryptToNumbers("What is your name?"));
+            Assert.AreEqual("223456231022145618285651151027273020175147", StringHelpers.EncryptToNumbers("My name is 'Farrukh'."));
+        }
+        [TestMethod]
+        public void DecryptTest()
+        {
+            Assert.AreEqual("a", StringHelpers.DecryptToWords("10"));
+            Assert.AreEqual("b", StringHelpers.DecryptToWords("11"));
+            Assert.AreEqual(" ", StringHelpers.DecryptToWords("56"));
+            Assert.AreEqual("ab", StringHelpers.DecryptToWords("1011"));
+            Assert.AreEqual("What is your name?".ToLower(), StringHelpers.DecryptToWords("321710295618285634243027562310221448"));
+            Assert.AreEqual("My name is 'Farrukh'.".ToLower(), StringHelpers.DecryptToWords("223456231022145618285651151027273020175147"));
+        }
+        [TestMethod]
+        public void EncryptDecryptIntegrationTest()
+        {
+            var messages = new string[]
+            {
+                @"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?",
+                @"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+            };
+            foreach (var message in messages)
+            {
+                var messageToLower = message.ToLower();
+                string messageInitialAsNumbers = StringHelpers.EncryptToNumbers(messageToLower);
+                string actualMessage = StringHelpers.DecryptToWords(messageInitialAsNumbers);
+                Console.WriteLine("Initial message: " + message);
+                Console.WriteLine("Resulting message: " + actualMessage);
+                Assert.AreEqual(messageToLower, actualMessage, "Messages are different");
+            }
+        }
     }
 }
