@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Numerics;
 using System.Web.Http;
 using AlgorithmsCore;
+using Data;
 
 namespace Web.Controllers
 {
@@ -29,11 +31,12 @@ namespace Web.Controllers
         {
             return Algorithms.RSADecrypt(BigInteger.Parse(PrivateKey), BigInteger.Parse(Modulus), BigInteger.Parse(message)).ToString();
         }
-        [HttpGet]
+
         /// <summary>
         /// Returns 3 keys in the following order: public, private, modulus
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public string[] Get_Keys()
         {
             var keys = Algorithms.RSAGetKeys();
@@ -51,6 +54,18 @@ namespace Web.Controllers
         public string Decrypt(string message, string privateKey, string modulus)
         {
             return Algorithms.RSADecrypt(BigInteger.Parse(privateKey), BigInteger.Parse(modulus), BigInteger.Parse(message)).ToString();
+        }
+
+        [HttpGet]
+        public IHttpActionResult Send(string message)
+        {
+            if (string.IsNullOrEmpty(message))
+                return BadRequest("Message must not be null");
+            var decryptedMessageInNumbers = Algorithms.RSADecrypt(BigInteger.Parse(PrivateKey), BigInteger.Parse(Modulus), BigInteger.Parse(message));
+            var decryptedMessageInWords = StringHelpers.DecryptToWords(decryptedMessageInNumbers.ToString());
+            var dbManager = new DatabaseManager();
+            dbManager.AddMessage(message, decryptedMessageInWords, PrivateKey, PublicKey, Modulus);
+            return Ok("I added your message to DB");
         }
     }
 }
