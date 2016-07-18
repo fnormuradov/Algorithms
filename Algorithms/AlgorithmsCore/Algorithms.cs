@@ -147,24 +147,5 @@ namespace AlgorithmsCore
             } while (possiblePrime < n);
             return list.ToArray();
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="n">Number of elements to generate</param>
-        /// <returns></returns>
-        public static List<BigInteger> GenerateTriangleNumbers(BigInteger n)
-        {
-            var triangleNumbers = new List<BigInteger>();
-            var i = 1;
-            var numberToAdd = 0;
-            while (true)
-            {
-                numberToAdd += i;
-                triangleNumbers.Add(numberToAdd);
-                if (triangleNumbers.Count == n)
-                    return triangleNumbers;
-                i++;
-            }
-        }
     }
 }

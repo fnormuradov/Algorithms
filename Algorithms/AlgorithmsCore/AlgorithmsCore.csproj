@@ -45,6 +45,7 @@
     <Compile Include="EuclideanAlgorithm.cs" />
     <Compile Include="ExponentiatingBySquaring.cs" />
     <Compile Include="Factorization.cs" />
+    <Compile Include="GenerateTriangleNumbers.cs" />
     <Compile Include="NumberHelpers.cs" />
     <Compile Include="PrimeNumberGenator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

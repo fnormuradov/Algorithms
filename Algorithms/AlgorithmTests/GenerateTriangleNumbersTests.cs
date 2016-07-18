@@ -13,7 +13,7 @@ namespace AlgorithmTests
     public class GenerateTriangleNumbersTests
     {
         [TestMethod]
-        public void GerenateConrrectly()
+        public void GenerateCorrectly()
         {
             CollectionAssert.AreEqual(new List<BigInteger>() { 1, 3, 6 }, Algorithms.GenerateTriangleNumbers(3));
             CollectionAssert.AreEqual(new List<BigInteger>() { 1, 3, 6, 10 }, Algorithms.GenerateTriangleNumbers(4));
