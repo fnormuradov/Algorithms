@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{35DAA66F-14FE-4B29-A829-4D8D15F212F3}</ProjectGuid>
+    <ProjectGuid>{C36E952D-7870-4A67-846A-54A832AF25AB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AlgorithmsCore</RootNamespace>
-    <AssemblyName>AlgorithmsCore</AssemblyName>
+    <RootNamespace>Algorithms.ClassWork</RootNamespace>
+    <AssemblyName>Algorithms.ClassWork</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,8 +32,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,24 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Algorithms.cs" />
-    <Compile Include="Combinatorics.cs" />
-    <Compile Include="EuclidianAlgorithm.cs" />
-    <Compile Include="ExponentiatingBySquaring.cs" />
-    <Compile Include="Factorization.cs" />
-    <Compile Include="Fibonacci.cs" />
-    <Compile Include="NumberHelpers.cs" />
-    <Compile Include="NumericHelper.cs" />
-    <Compile Include="PrimeNumberGenator.cs" />
+    <Compile Include="OurAlgorithms.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RSA.cs" />
-    <Compile Include="StringHelpers.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Data\Data.csproj">
-      <Project>{9fb4d4a7-d33a-40cc-94fe-916e305cf242}</Project>
-      <Name>Data</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
