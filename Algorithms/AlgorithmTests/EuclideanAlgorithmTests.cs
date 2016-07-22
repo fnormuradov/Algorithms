@@ -13,11 +13,11 @@ namespace AlgorithmTests
         [TestMethod]
         public void EuclideanAlgorithm()
         {
-            Assert.AreEqual(15, Algorithms.EuclideanAlgorithm(45, 60));
-            Assert.AreEqual(3, Algorithms.EuclideanAlgorithm(3999, 10023));
-            Assert.AreEqual(1, Algorithms.EuclideanAlgorithm(2342346, 23423561));
-            Assert.AreEqual(1, Algorithms.EuclideanAlgorithm(3746382641, 9048472518));
-            Assert.AreEqual(3, Algorithms.EuclideanAlgorithm(81, 21));
+            Assert.AreEqual(15, Algorithms.ExtendedEuclideanAlgorithm(45, 60)[0]);
+            Assert.AreEqual(3, Algorithms.ExtendedEuclideanAlgorithm(3999, 10023)[0]);
+            Assert.AreEqual(1, Algorithms.ExtendedEuclideanAlgorithm(2342346, 23423561)[0]);
+            Assert.AreEqual(1, Algorithms.ExtendedEuclideanAlgorithm(3746382641, 9048472518)[0]);
+            Assert.AreEqual(3, Algorithms.ExtendedEuclideanAlgorithm(81, 21)[0]);
         }
     }
 }

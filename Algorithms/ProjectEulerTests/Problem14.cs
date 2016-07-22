@@ -22,7 +22,7 @@ namespace ProjectEulerTests
     [TestClass]
     public class Problem14
     {
-        [TestMethod]
+        [TestMethod, Ignore]
         public void PrintQuantity()
         {
             var result = new List<Tuple<BigInteger, int>>();

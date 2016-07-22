@@ -12,75 +12,54 @@ namespace AlgorithmsCore
 
         public static Keys RSAGetKeys()
         {
+            //Generate 2 big (preferably 100+digit) prime numbers p and q
             var p = GetBigPrime(100);
             var q = GetBigPrime(100);
             //n = p * q
+            // Multiply the numbers and store them in n - modulus
             var n = BigInteger.Multiply(p, q);
+            //Calculate totient using the following formular
             //phi(n) = (p-1)*(q-1)
             var totient = BigInteger.Multiply((p - 1), (q - 1));
+
             var e = GetPublicKey(totient);
             var d = GetPrivateKey(totient, e);
+            //return keys
             return new Keys(e, d, n);
-        }
-        public static BigInteger[] Extended_GCD(BigInteger A, BigInteger B)
-        {
-            BigInteger[] result = new BigInteger[3];
-            if (A < B) //if A less than B, switch them
-            {
-                BigInteger temp = A;
-                A = B;
-                B = temp;
-            }
-            BigInteger r = B;
-            BigInteger q = 0;
-            BigInteger x0 = 1;
-            BigInteger y0 = 0;
-            BigInteger x1 = 0;
-            BigInteger y1 = 1;
-            BigInteger x = 0, y = 0;
-            while (r > 1)
-            {
-                r = A % B;
-                q = A / B;
-                x = x0 - q * x1;
-                y = y0 - q * y1;
-                x0 = x1;
-                y0 = y1;
-                x1 = x;
-                y1 = y;
-                A = B;
-                B = r;
-            }
-            result[0] = r;
-            result[1] = x;
-            result[2] = y;
-            return result;
         }
         public static BigInteger GetPublicKey(BigInteger totient)
         {
+            //Generate 50digit prime that is coprime with totient
+            //Hint use GetBigPrime to generate the number
+            //Hint use Euclidean Algorithm to test if numbers are coprime
             var length = (50);
             BigInteger e = 5;
             do
             {
                 e = GetBigPrime(length);
-                if (BigInteger.GreatestCommonDivisor(e, totient) == 1)
+                if (EuclideanAlgorithm(e, totient) == 1)
                     return e;
             } while (true);
         }
         public static BigInteger GetPrivateKey(BigInteger totient, BigInteger e)
         {
+            //Use Modular Multiplicative Inverse to generate the private key
+            //Pass totient and e to the method
+            //If the resulting inverse is negative return the sum of the inverse and the totient
             BigInteger[] d = new BigInteger[3];
-            d = Extended_GCD(totient, e);
+            d = ExtendedEuclideanAlgorithm(totient, e);
             if (d[2] < 0)
                 d[2] = d[2] + totient;
             return d[2];
         }
         public static BigInteger RSAEncrypt(BigInteger public_key, BigInteger n, BigInteger message)
         {
+            //Use the ModPow to return the remainer of the (m)^public_key % n
             return BigInteger.ModPow(message, public_key, n);
         }
         public static BigInteger RSADecrypt(BigInteger private_key, BigInteger n, BigInteger message)
         {
+            //Use the ModPow to return the remainer of the (m)^private_key % n
             return BigInteger.ModPow(message, private_key, n);
         }
     }

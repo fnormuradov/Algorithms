@@ -55,8 +55,10 @@
   <ItemGroup>
     <Compile Include="CombinatoricsTests.cs" />
     <Compile Include="EuclideanAlgorithmTests.cs" />
+    <Compile Include="ExtendedEuclideanAlgorithmTests.cs" />
     <Compile Include="FactorizationTests.cs" />
     <Compile Include="GenerateTriangleNumbersTests.cs" />
+    <Compile Include="ModularMultiplicativeInverseTests.cs" />
     <Compile Include="PowerTests.cs" />
     <Compile Include="PrimeGeneratorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

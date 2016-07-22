@@ -13,7 +13,7 @@ namespace ProjectEulerTests
     public class Problem25
     {
         [TestMethod]
-        public void MainTest()
+        public void MainTestProblem25()
         {
             var extMatrix = new ExtendedFibMatrix();
             var richSeq = extMatrix.GetRichFibSequence(5000);

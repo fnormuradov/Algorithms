@@ -49,6 +49,7 @@
     <Compile Include="Factorization.cs" />
     <Compile Include="Fibonacci.cs" />
     <Compile Include="GenerateTriangleNumbers.cs" />
+    <Compile Include="ModularMultiplicativeInverse.cs" />
     <Compile Include="NumberHelpers.cs" />
     <Compile Include="NumericHelper.cs" />
     <Compile Include="PrimeNumberGenator.cs" />

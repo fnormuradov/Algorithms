@@ -6,7 +6,7 @@ namespace Algorithms.ClassWork.Tests
     [TestClass]
     public class PrimeNumberGeneratorTests
     {
-        [TestMethod]
+        [TestMethod, Ignore]
         public void PrimeGeneratorShouldReturnFirstTenNumbers()
         {
             //Assign | Arrange
