@@ -67,5 +67,16 @@ namespace Web.Controllers
             dbManager.AddMessage(message, decryptedMessageInWords, PrivateKey, PublicKey, Modulus);
             return Ok("I added your message to DB");
         }
+
+        [HttpPost]
+        public IHttpActionResult Test()
+        {
+            return Ok("Works");
+        }
+        [HttpPost]
+        public HttpResponseMessage TestWithParam([FromBody]object message)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
     }
 }
