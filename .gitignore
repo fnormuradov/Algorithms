@@ -209,8 +209,9 @@ UpgradeLog*.XML
 UpgradeLog*.htm
 
 # SQL Server files
-*.mdf
-*.ldf
+#I want the database to be copied
+#*.mdf
+#*.ldf
 
 # Business Intelligence projects
 *.rdl.data
