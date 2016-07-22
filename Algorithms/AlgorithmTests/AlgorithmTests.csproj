@@ -54,7 +54,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CombinatoricsTests.cs" />
-    <Compile Include="EuclidianAlgorithmTests.cs" />
+    <Compile Include="EuclideanAlgorithmTests.cs" />
     <Compile Include="FactorizationTests.cs" />
     <Compile Include="GenerateTriangleNumbersTests.cs" />
     <Compile Include="PowerTests.cs" />

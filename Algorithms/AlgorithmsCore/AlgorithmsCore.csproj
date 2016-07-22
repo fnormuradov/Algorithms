@@ -44,7 +44,7 @@
   <ItemGroup>
     <Compile Include="Algorithms.cs" />
     <Compile Include="Combinatorics.cs" />
-    <Compile Include="EuclidianAlgorithm.cs" />
+    <Compile Include="EuclideanAlgorithm.cs" />
     <Compile Include="ExponentiatingBySquaring.cs" />
     <Compile Include="Factorization.cs" />
     <Compile Include="Fibonacci.cs" />
