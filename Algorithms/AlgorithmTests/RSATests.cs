@@ -83,5 +83,46 @@ namespace AlgorithmTests
             var encrypted = Algorithms.RSADecrypt(2753, 3233, 855);
             Assert.AreEqual(123, encrypted);
         }
+        /////////////////////
+        /// Integration Testing
+        /////////////////////
+        [TestMethod]
+        public void RSAIntegrationTest_NumbersSpelled()
+        {
+            var keys = Algorithms.RSAGetKeys();
+            var modulus = keys.GetModulus();
+            var publicKey = keys.GetPublicKey();
+            var privateKey = keys.GetPrivateKey();
+            for (var i = 1000; i > 900; i--)
+            {
+                var initialMessage = "'" + StringHelpers.SpellNumber(i) + "'";
+                RunRSATest(publicKey, privateKey, modulus, initialMessage);
+            }
+        }
+        [TestMethod]
+        public void RSAIntegrationTest_LongMessages()
+        {
+            var keys = Algorithms.RSAGetKeys();
+            var modulus = keys.GetModulus();
+            var publicKey = keys.GetPublicKey();
+            var privateKey = keys.GetPrivateKey();
+
+            for (var i = 2; i < 100; i++)
+            {
+                var randomNumber = Algorithms.GenerateRandomWithString(i);
+                RunRSATest(publicKey, privateKey, modulus, randomNumber.ToString());
+            }
+        }
+        public void RunRSATest(BigInteger publicKey, BigInteger privateKey, BigInteger modulus, string message)
+        {
+            string messageInitialAsNumbers = StringHelpers.EncryptToNumbers(message);
+            BigInteger messageAsNumber = BigInteger.Parse(messageInitialAsNumbers);
+            BigInteger encryptedMessage = Algorithms.RSAEncrypt(publicKey, modulus, messageAsNumber);
+            BigInteger decryptedMessage = Algorithms.RSADecrypt(privateKey, modulus, encryptedMessage);
+            string actualMessage = StringHelpers.DecryptToWords(decryptedMessage.ToString());
+            Console.WriteLine("Initial message: " + message);
+            Console.WriteLine("Resulting message: " + actualMessage);
+            Assert.AreEqual(message, actualMessage, "Messages are different");
+        }
     }
 }

@@ -20,7 +20,7 @@ namespace AlgorithmTests
             var factors = new List<PrimeNumber> { new PrimeNumber(1, 1), new PrimeNumber(2, 2), new PrimeNumber(5, 1) };
             var result = Algorithms.FactorizeBruteForce(20);
             Assert.AreEqual(false, result.Item1);
-            Console.WriteLine(PrintPowers(result.Item2));
+            Console.WriteLine(20+": "+PrintPowers(result.Item2));
             CollectionAssert.AreEqual(factors, result.Item2, new PrimeNumberEqualityComparer());
         }
         [TestMethod]
@@ -29,7 +29,7 @@ namespace AlgorithmTests
             var factors = new List<PrimeNumber> { new PrimeNumber(1, 1), new PrimeNumber(5, 2) };
             var result = Algorithms.FactorizeBruteForce(25);
             Assert.AreEqual(false, result.Item1);
-            Console.WriteLine(PrintPowers(result.Item2));
+            Console.WriteLine(25 + ": " + PrintPowers(result.Item2));
             CollectionAssert.AreEqual(factors, result.Item2, new PrimeNumberEqualityComparer());
         }
         [TestMethod]
@@ -38,7 +38,7 @@ namespace AlgorithmTests
             var factors = new List<PrimeNumber> { new PrimeNumber(1, 1), new PrimeNumber(13, 1) };
             var result = Algorithms.FactorizeBruteForce(13);
             Assert.AreEqual(true, result.Item1);
-            Console.WriteLine(PrintPowers(result.Item2));
+            Console.WriteLine(13 + ": " + PrintPowers(result.Item2));
             CollectionAssert.AreEqual(factors, result.Item2, new PrimeNumberEqualityComparer());
         }
         [TestMethod]
@@ -47,7 +47,7 @@ namespace AlgorithmTests
             var factors = new List<PrimeNumber> { new PrimeNumber(1, 1), new PrimeNumber(11, 1) };
             var result = Algorithms.FactorizeBruteForce(11);
             Assert.AreEqual(true, result.Item1);
-            Console.WriteLine(PrintPowers(result.Item2));
+            Console.WriteLine(11 + ": " + PrintPowers(result.Item2));
             CollectionAssert.AreEqual(factors, result.Item2, new PrimeNumberEqualityComparer());
         }
         [TestMethod]
@@ -56,22 +56,22 @@ namespace AlgorithmTests
             var factors = new List<PrimeNumber> { new PrimeNumber(1, 1), new PrimeNumber(5, 4) };
             var result = Algorithms.FactorizeBruteForce(625);
             Assert.AreEqual(false, result.Item1);
+            Console.WriteLine(625 + ": " + PrintPowers(result.Item2));
+            CollectionAssert.AreEqual(factors, result.Item2, new PrimeNumberEqualityComparer());
+        }
+        [TestMethod]
+        public void FactorizeBrudeForceTest782747()
+        {
+            var factors = new List<PrimeNumber> { new PrimeNumber(1, 1), new PrimeNumber(7, 1) };
+            var result = Algorithms.FactorizeBruteForce(782747);
+            Assert.AreEqual(false, result.Item1);
             Console.WriteLine(PrintPowers(result.Item2));
             CollectionAssert.AreEqual(factors, result.Item2, new PrimeNumberEqualityComparer());
         }
-        //[TestMethod]
-        //public void FactorizeBrudeForceTest782747()
-        //{
-        //    var factors = new List<PrimeNumber> { new PrimeNumber(1, 1), new PrimeNumber(7, 1) };
-        //    var result = Algorithms.FactorizeBruteForce(782747);
-        //    Assert.AreEqual(false, result.Item1);
-        //    Console.WriteLine(PrintPowers(result.Item2));
-        //    CollectionAssert.AreEqual(factors, result.Item2, new PrimeNumberEqualityComparer());
-        //}
         [TestMethod]
         public void RunTests()
         {
-            for (int i = 5; i > 2; i--)
+            for (int i = 10; i > 2; i--)
             {
                 for (int j = 0; j < 5; j++)
                 {

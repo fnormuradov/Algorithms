@@ -53,6 +53,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CombinatoricsTests.cs" />
     <Compile Include="EuclidianAlgorithmTests.cs" />
     <Compile Include="FactorizationTests.cs" />
     <Compile Include="GenerateTriangleNumbersTests.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="RSATests.cs" />
     <Compile Include="StringHelperTests.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="FibonacciTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AlgorithmsCore\AlgorithmsCore.csproj">

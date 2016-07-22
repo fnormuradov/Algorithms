@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{563D8CE2-EA14-4518-97B3-9A9FC589ACF1}</ProjectGuid>
+    <ProjectGuid>{531205F0-435E-4175-BA95-1C86C0A95E82}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProjectEulerTests</RootNamespace>
-    <AssemblyName>ProjectEulerTests</AssemblyName>
+    <RootNamespace>Algorithms.ClassWork.Tests</RootNamespace>
+    <AssemblyName>Algorithms.ClassWork.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -36,7 +36,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Numerics" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -51,39 +50,15 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Problem10.cs" />
-    <Compile Include="Problem11.cs" />
-    <Compile Include="Problem12.cs" />
-    <Compile Include="Problem13.cs" />
-    <Compile Include="Problem14.cs" />
-    <Compile Include="Problem16.cs" />
-    <Compile Include="Problem17.cs" />
-    <Compile Include="Problem20.cs" />
-    <Compile Include="Problem21.cs" />
-    <Compile Include="Problem22.cs" />
-    <Compile Include="Problem25.cs" />
-    <Compile Include="Problem26.cs" />
-    <Compile Include="Problem27.cs" />
-    <Compile Include="Problem29.cs" />
-    <Compile Include="Problem30.cs" />
-    <Compile Include="Problem34.cs" />
-    <Compile Include="Problem35.cs" />
-    <Compile Include="Problem4.cs" />
-    <Compile Include="Problem9.cs" />
+    <Compile Include="Fixtures\Fixtures.cs" />
+    <Compile Include="PrimeNumberGeneratorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AlgorithmsCore\AlgorithmsCore.csproj">
-      <Project>{35DAA66F-14FE-4B29-A829-4D8D15F212F3}</Project>
-      <Name>AlgorithmsCore</Name>
+    <ProjectReference Include="..\Algorithms.ClassWork\Algorithms.ClassWork.csproj">
+      <Project>{C36E952D-7870-4A67-846A-54A832AF25AB}</Project>
+      <Name>Algorithms.ClassWork</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Data\Data.csproj">
-      <Project>{9FB4D4A7-D33A-40CC-94FE-916E305CF242}</Project>
-      <Name>Data</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Data\p022_names.txt" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

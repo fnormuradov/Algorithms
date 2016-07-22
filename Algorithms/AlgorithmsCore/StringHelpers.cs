@@ -8,6 +8,7 @@ namespace AlgorithmsCore
 {
     public static class StringHelpers
     {
+        private static string Alphabet = "abcdefghijklmnopqrstuvwxyz0123456789,.?:!'+-=@ \'абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
         public static string Reverse(string s)
         {
             char[] charArray = s.ToCharArray();
@@ -124,6 +125,42 @@ namespace AlgorithmsCore
             if (GetNumberOfDigits(n) > 2)
                 return int.Parse(n.ToString().Substring(len - 3, 1));
             throw new Exception("More than 3 digits present");
+        }
+
+        public static string EncryptToNumbers(string text)
+        {
+            var encryptedText = new StringBuilder();
+            foreach (char sign in text.ToLower())
+            {
+                if (!Alphabet.Contains(sign))
+                    encryptedText.Append("56");
+                else
+                {
+                    var signIndex = Alphabet.IndexOf(sign);
+                    encryptedText.Append(signIndex + 10);
+                }
+            }
+            return encryptedText.ToString();
+        }
+        public static string DecryptToWords(string encryptedText)
+        {
+            var length = encryptedText.Length;
+            if (length % 2 != 0)
+                throw new Exception("That is a wrong message");
+            var decryptedText = new StringBuilder();
+            for (var i = 0; i < length / 2; i++)
+            {
+                var encryptedSign = int.Parse(encryptedText.Substring(2 * i, 2));
+                if (encryptedSign > 56)
+                    decryptedText.Append("?");
+                else
+                {
+                    var index = encryptedSign - 10;
+                    var decryptedSign = Alphabet.ElementAt(index);
+                    decryptedText.Append(decryptedSign);
+                }
+            }
+            return decryptedText.ToString();
         }
     }
 }
