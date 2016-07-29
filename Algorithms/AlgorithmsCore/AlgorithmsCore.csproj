@@ -42,17 +42,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Algorithms.cs" />
-    <Compile Include="Combinatorics.cs" />
-    <Compile Include="EuclidianAlgorithm.cs" />
-    <Compile Include="ExponentiatingBySquaring.cs" />
-    <Compile Include="Factorization.cs" />
-    <Compile Include="Fibonacci.cs" />
-    <Compile Include="NumberHelpers.cs" />
-    <Compile Include="NumericHelper.cs" />
-    <Compile Include="PrimeNumberGenator.cs" />
+    <Compile Include="NumberTheory\PrimeNumberOperations.cs" />
+    <Compile Include="NumberTheory\Combinatorics.cs" />
+    <Compile Include="NumberTheory\EuclidianAlgorithm.cs" />
+    <Compile Include="NumberTheory\ExponentiatingBySquaring.cs" />
+    <Compile Include="NumberTheory\Factorization.cs" />
+    <Compile Include="NumberTheory\Fibonacci.cs" />
+    <Compile Include="Interfaces\ISort.cs" />
+    <Compile Include="NumberTheory\NumberHelpers.cs" />
+    <Compile Include="NumberTheory\NumericHelper.cs" />
+    <Compile Include="NumberTheory\PrimeNumberGenator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RSA.cs" />
+    <Compile Include="RSA\RSA.cs" />
+    <Compile Include="Sorting\BaseSort.cs" />
+    <Compile Include="Sorting\InsertionSort.cs" />
+    <Compile Include="Sorting\MergeSort.cs" />
+    <Compile Include="Sorting\QuickSort.cs" />
+    <Compile Include="Sorting\SelectionSort.cs" />
+    <Compile Include="Sorting\ShellSort.cs" />
     <Compile Include="StringHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +68,7 @@
       <Name>Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

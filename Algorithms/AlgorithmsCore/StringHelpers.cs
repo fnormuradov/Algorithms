@@ -8,6 +8,7 @@ namespace AlgorithmsCore
 {
     public static class StringHelpers
     {
+        public static char[] LETTERS = new[] { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
         private static string Alphabet = "abcdefghijklmnopqrstuvwxyz0123456789,.?:!'+-=@ \'абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
         public static string Reverse(string s)
         {

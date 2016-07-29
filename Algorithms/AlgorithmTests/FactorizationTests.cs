@@ -59,7 +59,7 @@ namespace AlgorithmTests
             Console.WriteLine(625 + ": " + PrintPowers(result.Item2));
             CollectionAssert.AreEqual(factors, result.Item2, new PrimeNumberEqualityComparer());
         }
-        [TestMethod]
+        [TestMethod,Ignore]
         public void FactorizeBrudeForceTest782747()
         {
             var factors = new List<PrimeNumber> { new PrimeNumber(1, 1), new PrimeNumber(7, 1) };
