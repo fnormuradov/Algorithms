@@ -49,6 +49,10 @@
     <Compile Include="Factorization.cs" />
     <Compile Include="Fibonacci.cs" />
     <Compile Include="Interfaces\ISort.cs" />
+    <Compile Include="Sorting\InsertionSort.cs" />
+    <Compile Include="Sorting\MergeSort.cs" />
+    <Compile Include="Sorting\QuickSort.cs" />
+    <Compile Include="Sorting\SelectionSort.cs" />
     <Compile Include="Sorting\JahongirSort.cs" />
     <Compile Include="NumberHelpers.cs" />
     <Compile Include="NumericHelper.cs" />
@@ -57,6 +61,7 @@
     <Compile Include="RSA.cs" />
     <Compile Include="Sorting\BaseSort.cs" />
     <Compile Include="Sorting\MaksimSort.cs" />
+    <Compile Include="Sorting\ShellSort.cs" />
     <Compile Include="StringHelpers.cs" />
   </ItemGroup>
   <ItemGroup>

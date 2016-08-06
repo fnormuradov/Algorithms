@@ -61,9 +61,14 @@
     <Compile Include="PrimeGeneratorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RSATests.cs" />
+    <Compile Include="SortingTests\CollectionHelper.cs" />
+    <Compile Include="SortingTests\InsertionSortTests.cs" />
     <Compile Include="SortingTests\MaskimSortTests.cs" />
     <Compile Include="SortingTests\JahongirSortTests.cs" />
-    <Compile Include="SortingTests\SortComparisonTest.cs" />
+    <Compile Include="SortingTests\QuickSortTests.cs" />
+    <Compile Include="SortingTests\SelectionSortTests.cs" />
+    <Compile Include="SortingTests\ShellSortTests.cs" />
+    <Compile Include="SortingTests\SortComparisonTests.cs" />
     <Compile Include="StringHelperTests.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="FibonacciTests.cs" />
